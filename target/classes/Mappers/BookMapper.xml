@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--namespace要指定DAO接口的全限定名-->
+<mapper namespace="com.zyq.Dao.BookMapper">
+
+    <!-- 方法id要和DAO接口中的方法名一致 -->
+    <!-- 增加一个Book -->
+    <insert id="addBook" parameterType="com.zyq.Pojo.Books">
+        insert into SSM_Project.t_books(bookName,authorName, bookCounts,detail)
+        values (#{bookName}, #{authorName}, #{bookCounts}, #{detail})
+    </insert>
+
+    <!-- 根据id删除一个Book -->
+    <delete id="deleteBookById" parameterType="int">
+        delete from SSM_Project.t_books where bookId=#{bookId}
+    </delete>
+
+    <!-- 更新Book -->
+    <update id="updateBook" parameterType="com.zyq.Pojo.Books">
+        update SSM_Project.t_books
+        set bookName = #{bookName}, authorName = #{authorName}, bookCounts = #{bookCounts},detail = #{detail}
+        where bookId = #{bookId}
+    </update>
+
+    <!-- 根据id查询,返回一个Book -->
+    <select id="queryBookById" resultType="com.zyq.Pojo.Books">
+        select * from SSM_Project.t_books
+        where bookId = #{bookId}
+    </select>
+
+    <!-- 根据作者查询Book -->
+    <select id="queryBookByAuthorName" resultType="com.zyq.Pojo.Books">
+        select * from SSM_Project.t_books
+        where authorName = #{authorName}
+    </select>
+
+    <!-- 查询全部Book -->
+    <select id="queryAllBook" resultType="com.zyq.Pojo.Books">
+        select * from SSM_Project.t_books
+    </select>
+
+</mapper>
