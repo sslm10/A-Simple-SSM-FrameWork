@@ -4,8 +4,8 @@
 <head>
     <title>修改信息</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- 引入 Bootstrap -->
-    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+<%--    <!-- 引入 Bootstrap -->--%>
+<%--    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">--%>
 </head>
 <body>
 <div class="container">
@@ -21,7 +21,7 @@
     </div>
 
     <form action="${pageContext.request.contextPath}/updateBook" method="post">
-        <input type="hidden" name="bookID" value="${book.getBookID()}"/>
+        <input type="hidden" name="bookId" value="${book.getBookId()}"/>
         书籍名称：<input type="text" name="bookName" value="${book.getBookName()}"/>
         作者名字：<input type="text" name="authorName" value="${book.getAuthorName()}"/>
         书籍数量：<input type="text" name="bookCounts" value="${book.getBookCounts()}"/>

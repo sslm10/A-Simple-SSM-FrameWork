@@ -44,14 +44,14 @@
                 <tbody>
                 <c:forEach var="book" items="${requestScope.get('list')}">
                     <tr>
-                        <td>${book.getBookID()}</td>
+                        <td>${book.getBookId()}</td>
                         <td>${book.getBookName()}</td>
                         <td>${book.getAuthorName()}</td>
                         <td>${book.getBookCounts()}</td>
                         <td>${book.getDetail()}</td>
                         <td>
-                            <a href="${pageContext.request.contextPath}/toUpdateBook?id=${book.getBookID()}">更改</a> |
-                            <a href="${pageContext.request.contextPath}/del/${book.getBookID()}">删除</a>
+                            <a href="${pageContext.request.contextPath}/toUpdateBook?id=${book.getBookId()}">更改</a>
+                            <a href="${pageContext.request.contextPath}/del/${book.getBookId()}">删除</a>
                         </td>
                     </tr>
                 </c:forEach>
